@@ -9,7 +9,7 @@ import { throwError,zip } from 'rxjs';
 export class PokeServiceService {
 
   private apiurl='/api/v2/pokemon/'
-
+  
   constructor(
     private http: HttpClient,
   ) { }
@@ -30,5 +30,28 @@ export class PokeServiceService {
         return throwError('ups algo se rompio')
       })
     )
+  }
+
+  getPokemonstats(id:string)
+  {
+    
+    this.getPokemon(id)
+    .subscribe(data=>
+      {
+        let pokemonarray=[]
+        let pokemontipo
+        for (let index = 0; index < data.types.length; index++) {
+          
+          pokemontipo = data.types[index].type
+          //types[0].type.name
+          pokemonarray.push(pokemontipo)
+          console.log('dentro for',data.types[index].type)
+          
+          //this.pokemonstats.push(stats)
+          //console.log(pokemontipo)
+        }
+        console.log(pokemonarray)
+    })
+
   }
 }

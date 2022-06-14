@@ -1,8 +1,15 @@
-export interface Pokemon{
-    id:string
-    name:string
+export interface Types {
+    type: string
+}
+
+export interface Pokemon {
+    id: string
+    name: string
     weight: number
-    moves: string[]
+    move: string[]
     sprites: string
     stats: string[]
+    moves: string[]
+    types: Types[]
+
 }

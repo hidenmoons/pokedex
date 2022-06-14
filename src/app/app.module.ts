@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { TokenInterceptor } from './interceptor/token.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
     AppRoutingModule,
     HttpClientModule,
     MatCardModule,
-    SwiperModule
+    SwiperModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

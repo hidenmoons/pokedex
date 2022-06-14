@@ -3,11 +3,10 @@
 <h2>el ID del pokemon es: {{pokemon?.id}}</h2>
 <h2>el pokemon es: {{pokemon?.name}}</h2>
 <h2>el Peso del pokemon es: {{pokemon?.weight}}</h2>
-<h2>stats del pokemon es: {{pokemon?.stats}}</h2>
-
-<h2 *ngFor="let moves of pokemon?.moves; let indice=index"> 
+<h2>tipo del pokemon es: {{pokemon?.types}}</h2>
+<h2 *ngFor="let stats of pokemon?.types; let indice=index"> 
     {{indice+1}}
-    moves:{{moves}} 
+    moves:{{stats}} 
 </h2>
 
 <!-- <div class="gallery">
