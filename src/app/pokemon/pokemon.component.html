@@ -1,0 +1,19 @@
+<p>pokemon works!</p>
+<button (click)="getPokemon()">pokemon</button>
+<h2>el ID del pokemon es: {{pokemon?.id}}</h2>
+<h2>el pokemon es: {{pokemon?.name}}</h2>
+<h2>el Peso del pokemon es: {{pokemon?.weight}}</h2>
+<h2>stats del pokemon es: {{pokemon?.stats}}</h2>
+
+<h2 *ngFor="let moves of pokemon?.moves; let indice=index"> 
+    {{indice+1}}
+    moves:{{moves}} 
+</h2>
+
+<!-- <div class="gallery">
+    
+      <ng-template *ngFor="let img of pokemon?.sprites">
+        <img [src]="img" alt="img" />
+      </ng-template>
+    
+  </div> -->
