@@ -1,5 +1,10 @@
+export interface Slots{
+   name:string[]
+   url:string 
+}
 export interface Types {
-    type: string
+    
+    type: Slots
 }
 
 export interface Pokemon {
