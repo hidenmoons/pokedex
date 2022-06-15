@@ -1,3 +1,15 @@
+export interface Home{
+    
+    home:{
+        front_default:string
+    }
+    
+ }
+export interface Other{
+    
+    other:Home
+    
+ }
 export interface Slots{
    name:string[]
    url:string 
@@ -12,9 +24,9 @@ export interface Pokemon {
     name: string
     weight: number
     move: string[]
-    sprites: string
+    sprites: Other
     stats: string[]
     moves: string[]
     types: Types[]
-
+    species: string[]
 }
