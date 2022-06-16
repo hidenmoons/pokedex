@@ -39,7 +39,7 @@ export class PokemonComponent implements OnInit {
 
   }
   alert(){
-    alert('click imagen')
+    alert('click')
   }
   getPokemonimg(){
     this.pokemonservice.getPokemonstats('2')
