@@ -3,12 +3,13 @@
 <h2>el ID del pokemon es: {{pokemon?.id}}</h2>
 <h2>el pokemon es: {{pokemon?.name}}</h2>
 <h2>el Peso del pokemon es: {{pokemon?.weight}}</h2>
-<h2 >los tipos del pokemon son: {{pokemontype}}</h2>
 
-<!-- <div class="gallery">
-    
-      <ng-template *ngFor="let img of pokemon?.sprites">
-        <img [src]="img" alt="img" />
-      </ng-template>
-    
-  </div> -->
+<img src="{{pokemon?.sprites.other.home.front_default}}" alt="" (click)="alert()">
+<h2 >los tipos del pokemon son: {{pokemontype}}</h2>
+<h2>
+  Stats:
+  <li *ngFor="let person of pokemon?.stats"> 
+    {{person.stat.name}} {{ person.base_stat }} 
+  </li>
+</h2>
+

@@ -1,3 +1,12 @@
+export interface Stat{
+    name:string
+}
+export interface Stats {
+    
+    base_stats:number,
+    stat:Stat[]
+}
+
 export interface Home{
     
     home:{
@@ -25,7 +34,7 @@ export interface Pokemon {
     weight: number
     move: string[]
     sprites: Other
-    stats: string[]
+    stats: Stats[]
     moves: string[]
     types: Types[]
     species: string[]

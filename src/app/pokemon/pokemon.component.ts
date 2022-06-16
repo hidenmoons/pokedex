@@ -38,6 +38,9 @@ export class PokemonComponent implements OnInit {
       })
 
   }
+  alert(){
+    alert('click imagen')
+  }
   getPokemonimg(){
     this.pokemonservice.getPokemonstats('2')
       .subscribe(data => {
@@ -46,14 +49,14 @@ export class PokemonComponent implements OnInit {
         this.pokemon = data
         let pokemontipo: string[] = []
         console.log(data, 'data')
-        for (let index = 0; index <2; index++) {
+        for (let index = 0; index <1; index++) {
           
           
         this.pokemonimg.push(data.sprites.other.home.front_default)
-
+        
           console.log(this.pokemonimg,'dentro del for img')
         }
-        console.log(data.sprites.other.home.front_default,'fuera del for')
+        console.log(this.pokemon.stats[1],'fuera del for')
         //this.pokemontype = this.pokemonstats
       })
       
