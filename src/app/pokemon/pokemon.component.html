@@ -1,7 +1,7 @@
 <p>pokemon works!</p>
 <button (click)="getPokemonimg()">pokemon</button>
 
-<figure class="card card--grass">
+<figure class="card card{{pokemon.types[0].type.name}}">
   <div class="card__image-container">
     <img src="{{pokemon?.sprites.other.home.front_default}}" (click)="alert()">   
   </div>
@@ -9,9 +9,9 @@
 <figcaption class="card__caption">
   <h1 class="card__name">{{pokemon?.name}} {{pokemon.types[0].type.name}}</h1>
  
-  <h3 class="card__type" *ngFor="let types of pokemon.types[0].type.name">
+  <h3 class="card__type" *ngFor="let types of pokemon.types">
     
-    {{types}}
+    {{types.type.name}}
 
   </h3>
 
