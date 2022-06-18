@@ -37,6 +37,7 @@ export class PokemonComponent implements OnInit {
 
         }
         this.pokemontype = this.pokemonstats
+        console.log(this.pokemonstats)
       })
 
   }

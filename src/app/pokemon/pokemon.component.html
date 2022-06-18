@@ -1,26 +1,29 @@
 <p>pokemon works!</p>
 <button (click)="getPokemonimg()">pokemon</button>
 
-<figure class="card card--normal">
+<figure class="card card--grass">
   <div class="card__image-container">
     <img src="{{pokemon?.sprites.other.home.front_default}}" (click)="alert()">   
   </div>
   
 <figcaption class="card__caption">
-  <h1 class="card__name">{{pokemon?.name}}</h1>
+  <h1 class="card__name">{{pokemon?.name}} {{pokemon.types[0].type.name}}</h1>
+ 
+  <h3 class="card__type" *ngFor="let types of pokemon.types[0].type.name">
+    
+    {{types}}
 
-  <h3 class="card__type">
-    {{pokemontype}}
   </h3>
 
   <table class="card__stats">
-    <tbody *ngFor="let person of pokemon?.stats">
+    <tbody *ngFor="let pokemon of pokemon?.stats ">
       <tr>
-        <th >{{person.stat.name}}</th>
-        <td >{{ person.base_stat }} </td>
+        <th >{{pokemon.stat.name}}</th>
+        <td >{{ pokemon.base_stat }} </td>
       </tr>
     </tbody></table>
   
+    
   <div class="card__abilities">
     <h4 class="card__ability">
       <span class="card__label">Ability</span>

@@ -19,8 +19,11 @@ export interface Other{
     other:Home
     
  }
+ export interface tipo{
+    type:string
+ }
 export interface Slots{
-   name:string[]
+   name:tipo[]
    url:string 
 }
 export interface Types {
