@@ -13,6 +13,7 @@ export class PokemonComponent implements OnInit {
   pokemonimg: any[] = [];
   pokemon: Pokemon | any;
   pokemontype: Pokemon | any;
+  id =0;
   constructor(
     private pokemonservice: PokeServiceService
   ) { }
@@ -21,6 +22,7 @@ export class PokemonComponent implements OnInit {
     this.getPokemon()
   }
   getPokemon() {
+    
     this.pokemonservice.getPokemonstats('1')
       .subscribe(data => {
 
@@ -42,7 +44,9 @@ export class PokemonComponent implements OnInit {
     alert('click')
   }
   getPokemonimg(){
-    this.pokemonservice.getPokemonstats('2')
+   
+
+    this.pokemonservice.getPokemonstats(this.id.toString())
       .subscribe(data => {
 
         //let pokemonarray = []
@@ -59,6 +63,7 @@ export class PokemonComponent implements OnInit {
         console.log(this.pokemon.stats[1],'fuera del for')
         //this.pokemontype = this.pokemonstats
       })
+      this.id++;
       
   }
 }

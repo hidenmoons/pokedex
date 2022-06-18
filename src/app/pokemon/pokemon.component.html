@@ -1,63 +1,25 @@
 <p>pokemon works!</p>
-<div class="divgeneral">
 <button (click)="getPokemonimg()">pokemon</button>
-<h2>el ID del pokemon es: {{pokemon?.id}}</h2>
-<h2>el pokemon es: {{pokemon?.name}}</h2>
-<h2>el Peso del pokemon es: {{pokemon?.weight}}</h2>
 
-<img src="{{pokemon?.sprites.other.home.front_default}}" alt="" (click)="alert()">
-<h2 >los tipos del pokemon son: {{pokemontype}}</h2>
-<div class="divstats">
-<table align="center">
-  <tbody *ngFor="let person of pokemon?.stats">
-    <tr>
-      <th align="left">{{person.stat.name}}</th>
-      <td align="center">{{ person.base_stat }} </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
 <figure class="card card--normal">
   <div class="card__image-container">
-    <img src="https://cdn.bulbagarden.net/upload/thumb/e/e2/133Eevee.png/1200px-133Eevee.png" alt="Eevee" class="card__image">   
+    <img src="{{pokemon?.sprites.other.home.front_default}}" (click)="alert()">   
   </div>
   
 <figcaption class="card__caption">
-  <h1 class="card__name">Eevee</h1>
+  <h1 class="card__name">{{pokemon?.name}}</h1>
 
   <h3 class="card__type">
-    normal
+    {{pokemontype}}
   </h3>
 
   <table class="card__stats">
-    <tbody><tr>
-      <th>HP</th>
-      <td>55</td>
-    </tr>
-    <tr>
-      <th>Attack</th>
-      <td>55</td>
-    </tr>
-    
-    <tr>
-      <th>Defense</th>
-      <td>50</td>
-    </tr>
-
-    <tr>
-      <th>Special Attack</th>
-      <td>45</td>
-    </tr>
-    <tr>
-      <th>Special Defense</th>
-      <td>65</td>
-    </tr>
-    <tr>
-      <th>Speed</th>  
-      <td>55</td>
-    </tr>
-  </tbody></table>
+    <tbody *ngFor="let person of pokemon?.stats">
+      <tr>
+        <th >{{person.stat.name}}</th>
+        <td >{{ person.base_stat }} </td>
+      </tr>
+    </tbody></table>
   
   <div class="card__abilities">
     <h4 class="card__ability">
