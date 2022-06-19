@@ -8,10 +8,16 @@
   
 <figcaption class="card__caption">
   <h1 class="card__name">{{pokemon?.name}} {{pokemon.types[0].type.name}}</h1>
- 
-  <h3 class="card__type" *ngFor="let types of pokemon.types">
+
+  <h3 class="card__type" >
     
-    {{types.type.name}}
+    <table>
+      <tbody *ngFor="let types of pokemon.types;"> 
+        <tr>
+          <th >{{types.type.name}}</th>
+        </tr>
+      </tbody>
+    </table>
 
   </h3>
 

@@ -105,6 +105,22 @@ body {
       }
     }
     
+    &poison {
+        background: linear-gradient(110deg, #733467 0%, #3a1e34 100%);
+        box-shadow: 0px 5px 20px -10px #923f83;
+        .card__type {
+          background-color: #733467;
+        }
+      }
+
+      &ground {
+        background: linear-gradient(110deg, #964b00 0%, #7c3f06 100%);
+        box-shadow: 0px 5px 20px -10px #633309;
+        .card__type {
+          background-color: #964b00;
+        }
+      }
+
     &water {
     background: linear-gradient(120deg, #1CB5E0 0%, #000851 100%);    
       box-shadow: 0px 5px 20px -10px #000851;
