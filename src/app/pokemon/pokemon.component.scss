@@ -113,11 +113,51 @@ body {
         }
       }
 
+      &ghost {
+        background: linear-gradient(110deg, #262326 0%, #3a1e34 100%);
+        box-shadow: 0px 5px 20px -10px #000000;
+        .card__type {
+          background-color: #510744;
+        }
+      }
+
+      &dragon {
+        background: linear-gradient(110deg, #ff6f00 0%, #ff760e 100%);
+        box-shadow: 0px 5px 20px -10px #ff0909c4;
+        .card__type {
+          background-color: #fe5900;
+        }
+      }
+
       &ground {
         background: linear-gradient(110deg, #964b00 0%, #7c3f06 100%);
         box-shadow: 0px 5px 20px -10px #633309;
         .card__type {
           background-color: #964b00;
+        }
+      }
+
+      &rock {
+        background: linear-gradient(110deg, #4c4c4c 0%, #cacaca 100%);
+        box-shadow: 0px 5px 20px -10px #4c4c4c;
+        .card__type {
+          background-color: #964b00;
+        }
+      }
+
+      &fighting {
+        background: linear-gradient(110deg, #a877c2 0%, #8f51b1 100%);
+        box-shadow: 0px 5px 20px -10px #5d3474;
+        .card__type {
+          background-color: #ff0000;
+        }
+      }
+
+      &bug {
+        background: linear-gradient(110deg, #808000 0%, #767518 100%);
+        box-shadow: 0px 5px 20px -10px #6c6a25;
+        .card__type {
+          background-color: #676900;
         }
       }
 
