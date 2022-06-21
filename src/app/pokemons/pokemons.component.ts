@@ -16,9 +16,18 @@ export class PokemonsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+   this.getpokemon()
   }
 
+  getpokemon(){
+    for(let i=1; i<=10; i++){
+    this.pokemonservice.getPokemon(i).subscribe(data=>{
+      this.pokemons=data
+      
+    })
+    console.log(this.pokemons)
+  }
+  }
   getall(){
     this.pokemonservice.getAllPokemons(10,0)
     .subscribe(data=>{

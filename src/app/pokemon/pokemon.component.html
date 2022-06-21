@@ -1,11 +1,12 @@
 <div>
-  <button (click)="getPokemonprev()">anterior</button>
-  <button (click)="getPokemon()">siguiente</button>
+
+  
   
 </div>
 
 <div class="div-card" >
-  <figure class="card card{{pokemon.types[0].type.name}}">
+  <button (click)="getPokemonprev()">anterior</button>
+  <figure class="card card{{pokemon?.types[0].type.name}}">
     <div class="card__image-container">
       <img src="{{pokemon?.sprites.other.home.front_default}}" (click)="alert()">   
     </div>
@@ -16,7 +17,7 @@
     <h3 class="card__type" >
       
       <table>
-        <tbody *ngFor="let types of pokemon.types;"> 
+        <tbody *ngFor="let types of pokemon?.types;"> 
           <tr>
             <th >{{types.type.name}}</th>
           </tr>
@@ -37,14 +38,15 @@
     <div class="card__abilities">
       <h4 class="card__ability">
         <span class="card__label">Ability</span>
-        {{pokemon.moves[3].move.name}}
+        {{pokemon?.moves[3].move.name}}
       </h4>
       <h4 class="card__ability">
         <span class="card__label">2 Ability</span>
-        {{pokemon.moves[0].move.name}}
+        {{pokemon?.moves[0].move.name}}
       </h4>
     </div>
   </figcaption>
   </figure>
+  <button (click)="getPokemon()">siguiente</button>
 </div>
 

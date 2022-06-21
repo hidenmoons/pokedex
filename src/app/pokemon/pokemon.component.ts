@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PokeServiceService } from '../Services/poke-service.service';
 import { Pokemon } from '../models/Pokemon.model';
 import { MatCardModule } from '@angular/material/card';
@@ -9,10 +9,8 @@ import { MatCardModule } from '@angular/material/card';
   styleUrls: ['./pokemon.component.scss']
 })
 export class PokemonComponent implements OnInit {
-  pokemonstats: any[] = [];
-  pokemonimg: any[] = [];
-  pokemon: Pokemon | any;
-  pokemontype: Pokemon | any;
+   @Input() pokemon: Pokemon | any;
+
   id = 0;
   constructor(
     private pokemonservice: PokeServiceService

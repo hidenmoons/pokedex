@@ -1,6 +1,14 @@
 <p>pokemons works!</p>
-<button (click)="getall()">cargar</button>
-
-    <app-pokemon  >
-    </app-pokemon>
+<button (click)="getpokemon()">cargar</button>
+<div class="row">
+    <div >
+        <app-pokemon 
+        [pokemon]="pokemon" 
+        *ngFor="let pokemon 
+        of pokemons" >
+        </app-pokemon>
+    </div>
+   
+</div>
+   
 

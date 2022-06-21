@@ -10,19 +10,20 @@ import { Pokemons } from '../models/Pokemons.model';
 export class PokeServiceService {
 
   private apiurl = '/api/v2/pokemon/'
-
+  private i=0
   constructor(
     private http: HttpClient,
   ) { }
 
   getPokemon(id: number) {
-    return this.http.get<Pokemon>(`${this.apiurl}/${id}`)
+   
+    return this.http.get<Pokemon[]>(`${this.apiurl}/${id}`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           if (error.status == HttpStatusCode.Conflict) {
             return throwError('ups algo se rompio en el server')
           } if (error.status == HttpStatusCode.NotFound) {
-            return throwError('el producto no existe')
+            return throwError('el pokemon no existe')
           }
           if (error.status == HttpStatusCode.Unauthorized) {
             return throwError('no estas autorizado')
@@ -30,6 +31,9 @@ export class PokeServiceService {
           return throwError('ups algo se rompio')
         })
       )
+     
+    
+  
   }
 
   getAllPokemons(limit?:number, offset?:number){
