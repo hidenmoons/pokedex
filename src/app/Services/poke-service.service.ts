@@ -3,6 +3,7 @@ import { HttpClient, HttpParams, HttpErrorResponse, HttpStatusCode } from '@angu
 import { Pokemon } from '../models/Pokemon.model';
 import { retry, catchError, map, switchMap } from 'rxjs';
 import { throwError, zip } from 'rxjs';
+import { Pokemons } from '../models/Pokemons.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +15,7 @@ export class PokeServiceService {
     private http: HttpClient,
   ) { }
 
-  getPokemon(id: string) {
+  getPokemon(id: number) {
     return this.http.get<Pokemon>(`${this.apiurl}/${id}`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
@@ -31,15 +32,12 @@ export class PokeServiceService {
       )
   }
 
-  getPokemonID(id: string){
-    return this.getPokemon(id)
-    .pipe(
-     
-    )
-  }
-
-  getPokemonstats(id: string) {
-    return this.http.get<Pokemon>(`${this.apiurl}/${id}`)
-      
+  getAllPokemons(limit?:number, offset?:number){
+    let params=new HttpParams();
+    if(limit&& offset){
+      params = params.set('limit', limit);
+      params = params.set('offset', limit);
+    }
+    return this.http.get<Pokemons[]>(`${this.apiurl}`,{params})
   }
 }

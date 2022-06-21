@@ -1,45 +1,50 @@
-<p>pokemon works!</p>
-<button (click)="getPokemonimg()">pokemon</button>
-
-
-<figure class="card card{{pokemon.types[0].type.name}}">
-  <div class="card__image-container">
-    <img src="{{pokemon?.sprites.other.home.front_default}}" (click)="alert()">   
-  </div>
+<div>
+  <button (click)="getPokemonprev()">anterior</button>
+  <button (click)="getPokemon()">siguiente</button>
   
-<figcaption class="card__caption">
-  <h1 class="card__name">{{pokemon?.name}}</h1>
+</div>
 
-  <h3 class="card__type" >
+<div class="div-card" >
+  <figure class="card card{{pokemon.types[0].type.name}}">
+    <div class="card__image-container">
+      <img src="{{pokemon?.sprites.other.home.front_default}}" (click)="alert()">   
+    </div>
     
-    <table>
-      <tbody *ngFor="let types of pokemon.types;"> 
+  <figcaption class="card__caption">
+    <h1 class="card__name">{{pokemon?.name}}</h1>
+  
+    <h3 class="card__type" >
+      
+      <table>
+        <tbody *ngFor="let types of pokemon.types;"> 
+          <tr>
+            <th >{{types.type.name}}</th>
+          </tr>
+        </tbody>
+      </table>
+  
+    </h3>
+  
+    <table class="card__stats">
+      <tbody *ngFor="let pokemon of pokemon?.stats ">
         <tr>
-          <th >{{types.type.name}}</th>
+          <th >{{pokemon.stat.name}}</th>
+          <td >{{ pokemon.base_stat }} </td>
         </tr>
-      </tbody>
-    </table>
-
-  </h3>
-
-  <table class="card__stats">
-    <tbody *ngFor="let pokemon of pokemon?.stats ">
-      <tr>
-        <th >{{pokemon.stat.name}}</th>
-        <td >{{ pokemon.base_stat }} </td>
-      </tr>
-    </tbody></table>
-  
+      </tbody></table>
     
-  <div class="card__abilities">
-    <h4 class="card__ability">
-      <span class="card__label">Ability</span>
-      {{pokemon.moves[3].move.name}}
-    </h4>
-    <h4 class="card__ability">
-      <span class="card__label">Hidden Ability</span>
-      Anticipation
-    </h4>
-  </div>
-</figcaption>
-</figure>
+      
+    <div class="card__abilities">
+      <h4 class="card__ability">
+        <span class="card__label">Ability</span>
+        {{pokemon.moves[3].move.name}}
+      </h4>
+      <h4 class="card__ability">
+        <span class="card__label">2 Ability</span>
+        {{pokemon.moves[0].move.name}}
+      </h4>
+    </div>
+  </figcaption>
+  </figure>
+</div>
+

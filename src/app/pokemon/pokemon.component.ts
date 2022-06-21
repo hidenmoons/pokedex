@@ -13,7 +13,7 @@ export class PokemonComponent implements OnInit {
   pokemonimg: any[] = [];
   pokemon: Pokemon | any;
   pokemontype: Pokemon | any;
-  id =1;
+  id = 0;
   constructor(
     private pokemonservice: PokeServiceService
   ) { }
@@ -22,49 +22,25 @@ export class PokemonComponent implements OnInit {
     this.getPokemon()
   }
   getPokemon() {
-    
-    this.pokemonservice.getPokemonstats('1')
+    this.id++;
+    if (this.id <= 0) { this.id = 1 }
+    this.pokemonservice.getPokemon(this.id)
       .subscribe(data => {
-
-        //let pokemonarray = []
         this.pokemon = data
-        let pokemontipo: string[] = []
-        console.log(data, 'data')
-        for (let index = 0; index < data.types.length; index++) {
+      })
 
-          //pokemontipo = data.types[index].type.name
-          this.pokemonstats.push(data.types[index].type.name)
 
-        }
-        this.pokemontype = this.pokemonstats
-        console.log(this.pokemonstats)
+  }
+  getPokemonprev() {
+    this.id--;
+    if (this.id <= 0) { this.id = 1 }
+    this.pokemonservice.getPokemon(this.id)
+      .subscribe(data => {
+        this.pokemon = data
       })
 
   }
-  alert(){
+  alert() {
     alert('click')
-  }
-  getPokemonimg(){
-   
-
-    this.pokemonservice.getPokemonstats(this.id.toString())
-      .subscribe(data => {
-
-        //let pokemonarray = []
-        this.pokemon = data
-        let pokemontipo: string[] = []
-        console.log(data, 'data')
-        for (let index = 0; index <1; index++) {
-          
-          
-        this.pokemonimg.push(data.sprites.other.home.front_default)
-        
-          console.log(this.pokemonimg,'dentro del for img')
-        }
-        console.log(this.pokemon.stats[1],'fuera del for')
-        //this.pokemontype = this.pokemonstats
-      })
-      this.id++;
-      
   }
 }
