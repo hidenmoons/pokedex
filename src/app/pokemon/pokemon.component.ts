@@ -13,7 +13,7 @@ export class PokemonComponent implements OnInit {
   pokemonimg: any[] = [];
   pokemon: Pokemon | any;
   pokemontype: Pokemon | any;
-  id =0;
+  id =1;
   constructor(
     private pokemonservice: PokeServiceService
   ) { }
