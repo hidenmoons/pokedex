@@ -10,7 +10,6 @@ import { PokeServiceService } from '../Services/poke-service.service';
 export class PokemonsComponent implements OnInit {
 
   @Input() pokemons: Pokemon[] = [];
-  @Input() pokemons1: Pokemons[] = [];
   constructor(
     private pokemonservice:PokeServiceService
   ) { }
@@ -31,8 +30,8 @@ export class PokemonsComponent implements OnInit {
   getall(){
     this.pokemonservice.getAllPokemons(10,0)
     .subscribe(data=>{
-      this.pokemons1=data;
+      //this.pokemons=data;
     });
-    console.log(this.pokemons1,'pokemons1')
+    console.log(this.pokemons,'pokemons1')
   }
 }
