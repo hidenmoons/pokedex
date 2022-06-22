@@ -17,8 +17,9 @@ export class PokemonComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getPokemon()
+    
   }
+  
   getPokemon() {
     this.id++;
     if (this.id <= 0) { this.id = 1 }

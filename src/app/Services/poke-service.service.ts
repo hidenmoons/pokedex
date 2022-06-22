@@ -15,9 +15,9 @@ export class PokeServiceService {
     private http: HttpClient,
   ) { }
 
-  getPokemon(id: number) {
+  getPokemon(id: number|string) {
    
-    return this.http.get<Pokemon[]>(`${this.apiurl}/${id}`)
+    return this.http.get<Pokemon>(`${this.apiurl}/${id}`)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           if (error.status == HttpStatusCode.Conflict) {
