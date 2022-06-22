@@ -1,8 +1,10 @@
 
 export interface name {
-    name: string;
-    url: string;
+    name: string
+    url: string
+    
 }
+
 export interface Pokemons {
-    results: name[];
+    results:name
 }
