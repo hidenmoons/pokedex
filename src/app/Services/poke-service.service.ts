@@ -42,6 +42,6 @@ export class PokeServiceService {
       params = params.set('limit', limit);
       params = params.set('offset', offset);
     
-    return this.http.get<Pokemons[]>(`${this.apiurl}`,{params})
+    return this.http.get<Pokemons|any>(`${this.apiurl}`,{params})
   }
 }

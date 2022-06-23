@@ -6,5 +6,5 @@ export interface name {
 }
 
 export interface Pokemons {
-    results:name
+    results:name[]
 }
